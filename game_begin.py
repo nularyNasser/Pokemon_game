@@ -14,7 +14,7 @@ carapuce = Pokemon("Carapuce", "Eau", 1)
 #-------------------------------------------
 
 # Faire un dialogue qui demande au joueur de chosir son pseudo.
-with open('dialog.json', 'r') as dialog_file: # name / dialog
+with open('Pokemon_game/dialog.json', 'r', encoding='utf-8') as dialog_file: # name / dialog
     dialog = json.load(dialog_file) # fichier dialog.json charger en mode read
 
 for i in dialog["chen"]["dialog"]: # Parcour du dialog de chen
