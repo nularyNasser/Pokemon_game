@@ -1,0 +1,14 @@
+
+
+{
+    "chen":{
+        "dialog":
+        {
+            "1":"Bonjour, jeune aventurier. Tu as le choix entre 3 pokémons, choisi bien il sera ton amis jusqu'à la fin.",
+            "2": "Alors choisi très bien !",
+            "choix" : ["1 Pikachu", "2 Drakofeu", "3 Carapuce"],
+            "3": "Trés bon choix !",
+            "4": "Tu es maintenant prêt pour partir à l'aventure et devenir le meilleur drésseur !"
+        }
+    }
+}
