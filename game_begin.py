@@ -33,6 +33,8 @@ def dialogue_debut():
                 joueur.add_in_pokedex(drakofeu)
             elif choix == 3:
                 joueur.add_in_pokedex(carapuce)
+            elif choix == 4:
+                joueur.add_in_pokedex(roucoups)
         else:
             print(dialog["chen"][i])
             input()
