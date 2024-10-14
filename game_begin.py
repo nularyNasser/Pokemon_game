@@ -1,5 +1,4 @@
 import json
-import time
 from Player import Player
 from Pokemon import Pokemon
 
