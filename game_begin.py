@@ -10,6 +10,7 @@ joueur = Player("Sasha")
 pikachu = Pokemon("Pikachu", "Électrique", 1)
 drakofeu = Pokemon("Drakofeu", "Feu", 1)
 carapuce = Pokemon("Carapuce", "Eau", 1)
+roucoups = Pokemon("Roucoups", "Vent", 1)
 #-------------------------------------------
 
 # Faire un dialogue qui demande au joueur de chosir son pseudo.
@@ -20,25 +21,21 @@ with open('dialog.json', 'r', encoding='utf-8') as dialog_file: # name / dialog
 def dialogue_debut():
     for i in dialog["chen"]: # Parcour du dialog de chen
         if i == "choix":
-            dialogue_choix(i, "chen")
+            print("Choisir un numéro pour choisir: ")
+            for pokemon in dialog["chen"][i]:
+                print(pokemon) # Affichage des 3 pokemon
+            choix = int(input("Numero : "))
+            while choix < 0 or choix > 3:
+                choix = int(input("Numero : "))
+            if choix == 1:
+                joueur.add_in_pokedex(pikachu)
+            elif choix == 2:
+                joueur.add_in_pokedex(drakofeu)
+            elif choix == 3:
+                joueur.add_in_pokedex(carapuce)
         else:
             print(dialog["chen"][i])
             input()
-
-
-def dialogue_choix(i: int, who: str):
-    print("Choisir un numéro pour choisir: ")
-    for pokemon in dialog[who][i]:
-        print(pokemon) # Affichage des 3 pokemon
-    choix_pokemon = int(input("Numero : "))
-    while choix_pokemon < 0 or choix_pokemon > 3:
-        choix_pokemon = int(input("Numero : "))
-    if choix_pokemon == 1:
-        joueur.add_in_pokedex(pikachu)
-    elif choix_pokemon == 2:
-        joueur.add_in_pokedex(drakofeu)
-    else:
-        joueur.add_in_pokedex(carapuce)
 
 
 dialogue_debut()
@@ -47,9 +44,20 @@ dialogue_debut()
 
 # Demander au joueur ou il veut aller
 def dialogue_change_place():
-    for i in dialog["game_dialog"]:
+    for i in dialog["game_dialog"]: # Parcour du dialog de chen
         if i == "choix":
-            dialogue_choix(i, "game_dialog")
+            print("Choisir un numéro pour choisir: ")
+            for pokemon in dialog["game_dialog"][i]:
+                print(pokemon) # Affichage des 3 pokemon
+            choix = int(input("Numero : "))
+            while choix < 0 or choix > 3:
+                choix = int(input("Numero : "))
+#            if choix == 1:
+#                joueur.add_in_pokedex(pikachu)
+#            elif choix == 2:
+#                joueur.add_in_pokedex(drakofeu)
+#            elif choix == 3:
+#                joueur.add_in_pokedex(carapuce)
         else:
             print(dialog["game_dialog"][i])
             input()
