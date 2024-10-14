@@ -15,6 +15,7 @@ class Player:
     def add_in_pokedex(self, object): # add_in_pokedex()
         self.pokedex[object.name] = object
 
+
 if __name__ == "__main__":
     pikachu = Pokemon("Pikachu", "Electrique", 5)
     ratata = Pokemon("Ratata", "Je ne sais pas", 2)
